@@ -16,7 +16,7 @@ files:
                   self.coins.append(coin)
         selected: false
         status: Unchecked
-      - offset: 774
+      - offset: 909
         length: 43
         placeholder_text: "...  # TODO реализуйте метод как в описании"
         initial_state:

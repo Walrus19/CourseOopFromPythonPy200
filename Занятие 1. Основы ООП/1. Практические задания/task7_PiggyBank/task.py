@@ -23,6 +23,10 @@ class PiggyBank:
         :param coin: Объект Coin для добавления.
         """
         ...  # TODO реализуйте метод как в описании
+        if self.is_broken is True:
+            ValueError("Копилка разбита. Нельзя добавить монеты.")
+        self.coins.append(coin)
+
 
     def break_piggy_bank(self):
         """
@@ -31,7 +35,13 @@ class PiggyBank:
         :return: Словарь, где ключ - номинал монеты, значение - количество монет этого номинала.
         """
         ...  # TODO реализуйте метод как в описании
+        if self.is_broken is True:
+            ValueError("Копилка уже разбита.")
+        self.is_broken = True
 
+        print(self.coins)
+        return Coin
+        self.coins = []
 
 if __name__ == "__main__":
     # Создаем копилку
