@@ -7,6 +7,8 @@ class Coin:
         """
         self.denomination = denomination
 
+    def __repr__(self):
+        return f"{self.denomination}"
 
 class PiggyBank:
     def __init__(self):
@@ -39,8 +41,8 @@ class PiggyBank:
             ValueError("Копилка уже разбита.")
         self.is_broken = True
 
-        print(self.coins)
-        return Coin
+        print(self)
+        return self.coins
         self.coins = []
 
 if __name__ == "__main__":
