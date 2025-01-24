@@ -1,4 +1,5 @@
 
+from collections import Counter
 class Coin:
     def __init__(self, denomination: float):
         """
@@ -42,18 +43,15 @@ class PiggyBank:
         # TODO реализуйте метод как в описании
         if self.is_broken is True:
             ValueError("Копилка уже разбита.")
-        dict = {}
-        count = 0
-        for i in self.coins:
 
 
-        print(dict)
+
         self.is_broken = True
 
 
-
+        rezult = self.coins
         self.coins = []
-        return dict
+        return rezult
 
 if __name__ == "__main__":
     # Создаем копилку

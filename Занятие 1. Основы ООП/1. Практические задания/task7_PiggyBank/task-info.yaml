@@ -3,7 +3,7 @@ files:
   - name: task.py
     visible: true
     placeholders:
-      - offset: 645
+      - offset: 677
         length: 43
         placeholder_text: "...  # TODO реализуйте метод как в описании"
         initial_state:
@@ -16,7 +16,7 @@ files:
                   self.coins.append(coin)
         selected: true
         status: Unchecked
-      - offset: 1048
+      - offset: 1080
         length: 38
         placeholder_text: "...  # TODO реализуйте метод как в описании"
         initial_state:
