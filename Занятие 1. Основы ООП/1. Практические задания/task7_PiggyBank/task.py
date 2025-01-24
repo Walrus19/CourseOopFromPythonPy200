@@ -1,3 +1,4 @@
+from collections import Counter
 class Coin:
     def __init__(self, denomination: float):
         """
@@ -36,14 +37,17 @@ class PiggyBank:
 
         :return: Словарь, где ключ - номинал монеты, значение - количество монет этого номинала.
         """
-        ...  # TODO реализуйте метод как в описании
+        # TODO реализуйте метод как в описании
         if self.is_broken is True:
             ValueError("Копилка уже разбита.")
+        dict = Counter(self.coins)
+        print(dict)
         self.is_broken = True
 
-        print(self.coins)
-        return self.coins
+
+
         self.coins = []
+        return dict
 
 if __name__ == "__main__":
     # Создаем копилку
