@@ -41,7 +41,7 @@ class PiggyBank:
             ValueError("Копилка уже разбита.")
         self.is_broken = True
 
-        print(self)
+        print(self.coins)
         return self.coins
         self.coins = []
 
