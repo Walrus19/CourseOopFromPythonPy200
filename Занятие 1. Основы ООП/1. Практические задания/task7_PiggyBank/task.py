@@ -41,7 +41,7 @@ class PiggyBank:
         if self.is_broken is True:
             ValueError("Копилка уже разбита.")
         dict = Counter(self.coins)
-        print(dict)
+        print(sum(dict.values()))
         self.is_broken = True
 
 
