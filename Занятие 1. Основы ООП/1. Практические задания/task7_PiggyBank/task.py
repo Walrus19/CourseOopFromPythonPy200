@@ -1,4 +1,4 @@
-from collections import Counter
+
 class Coin:
     def __init__(self, denomination: float):
         """
@@ -10,6 +10,8 @@ class Coin:
 
     def __repr__(self):
         return f"{self.denomination}"
+    def __eq__(self, other):
+        self.denomination = other.denomination
 
 class PiggyBank:
     def __init__(self):
@@ -40,8 +42,12 @@ class PiggyBank:
         # TODO реализуйте метод как в описании
         if self.is_broken is True:
             ValueError("Копилка уже разбита.")
-        dict = Counter(self.coins)
-        print(sum(dict.values()))
+        dict = {}
+        count = 0
+        for i in self.coins:
+
+
+        print(dict)
         self.is_broken = True
 
 
