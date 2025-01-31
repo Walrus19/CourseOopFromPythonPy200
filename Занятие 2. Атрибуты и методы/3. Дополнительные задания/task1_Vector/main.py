@@ -10,12 +10,15 @@ class Vector:
         return Vector(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
+        return Vector(self.x - other.x, self.y - other.y)
         ... # TODO реализуйте вычитание
 
     def __mul__(self, other):
+        return Vector(self.x * other.x, self.y * other.y)
         ... # TODO реализуйте умножение
 
     def __truediv__(self, other):
+        return Vector(self.x / other.x, self.y / other.y)
         ... # TODO реализуйте деление
 
 
