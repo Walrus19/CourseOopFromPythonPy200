@@ -9,5 +9,8 @@ files:
   - name: tests/output.txt
     visible: false
     learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 31 Jan 2025 07:09:55 UTC"
 record: -1

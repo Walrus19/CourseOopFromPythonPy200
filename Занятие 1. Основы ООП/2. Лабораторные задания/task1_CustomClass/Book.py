@@ -29,10 +29,9 @@ class Book:
         Увеличение количества просмотренных страниц
         :param read_pages:
 
-        >>>book.increment_last_read_page(-200)
+        >>> book.increment_last_read_page(-200)
         ...
         raise ValueError("Количество страниц не может быть меньше нуля")
-        :return:
         """
         if not isinstance(read_pages, int):
             raise TypeError("Количество страниц должно быть типа int")
@@ -42,6 +41,6 @@ class Book:
         return self.last_read_page
 
 
-book = Book("Пушкин",-100,1878)
+book = Book("Пушкин",50,1878)
 book.increment_last_read_page(200)
-print(a.__dict__)
+print(book.__dict__)
