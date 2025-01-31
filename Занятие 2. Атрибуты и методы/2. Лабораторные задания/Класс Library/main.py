@@ -14,17 +14,33 @@ BOOKS_DATABASE = [
 
 
 # TODO Импортируйте и скопируйте ранее написанный класс Book
+class Book:
+    def __init__(self, id_, name, pages):
+        #
+        self.id_ = id_
+        self.name = name
+        self.pages = pages
 
+    def __str__(self):
+        #pass # TODO дописать метод
+        return f'Книга "{self.name}"'
+    def __repr__(self):
+        #pass # TODO дописать метод
+        return f'{self.__class__.__name__}(id_={self.id_!r}, name={self.name!r}, pages={self.pages!r})'
 
 class Library:
 
-    def __init__(self, books):
+    def __init__(self, books=None):
         """
         Не забудьте про 'Конструктор должен принимать необязательный аргумент со значением по умолчанию. Если пользователь
         его не передал, то библиотека инициализируется с пустым списком книг.'
         :param books:
         """
         pass # TODO дописать метод
+        if books is None:
+            self.books = []
+        else:
+            self.books = books
 
     def get_next_book_id(self):
         """
@@ -33,6 +49,10 @@ class Library:
         :return:
         """
         pass # TODO дописать метод
+        if not self.books:
+            return 1
+        else:
+            return self.books[-1].id_ + 1
 
     def get_index_by_book_id(self, id_):
         """
@@ -42,8 +62,12 @@ class Library:
         :param id_: id книги
         :return: индекс, где лежит книга в списке книг
         """
-        pass # TODO дописать метод
+        #pass # TODO дописать метод
 
+        for count, book in enumerate(self.books):
+            if book.id_ == id_:
+                index = count
+        return index
 
 if __name__ == '__main__':
     empty_library = Library()  # инициализируем пустую библиотеку
