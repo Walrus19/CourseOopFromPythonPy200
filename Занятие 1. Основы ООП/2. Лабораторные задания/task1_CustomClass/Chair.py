@@ -22,5 +22,4 @@ class Chair:
         if new_color in color_pallet:
             self.color = new_color
             print ("Удачное изменение цвета")
-
         return self.color
