@@ -28,4 +28,4 @@ class AudioBook(Book):
     def __str__(self):
         return f"Книга {self.name}. Автор {self.author}"
 
-print()
+a = PaperBook.__init__(1,"sdhjhsd","SPb","author")
