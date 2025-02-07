@@ -105,10 +105,9 @@ class Book(LibraryItem):
         genre - Жанр
         """
         # TODO Инициализируйте переменные от LibraryItem и добавьте новый приватный атрибут genre. Не забудьте, что нужна валидация перед записью
-        def __init__(self, genre):
-            super().__init__(title, author, publication_year)
-            self.__validate_genre(genre)
-            self.__genre = genre
+        super().__init__(title, author, publication_year)
+        self.__validate_genre(genre)
+        self.__genre = genre
 
 
     @staticmethod
@@ -155,7 +154,7 @@ class Magazine(LibraryItem):
         return self.__issue_number
     # TODO  переопределите метод get_info, чтобы он отображал информацию специфичную для журнала (Журнал: 'Название журнала',  Номер выпуска: 'Номер', Год издания: 'Год')
     def get_info(self):
-        return f"Книга: '{self.title}', Номер выпуска: {self.issue_number},  Год издания: {self.publication_year}"
+        return f"Журнал: '{self.title}', Номер выпуска: {self.issue_number}, Год издания: {self.publication_year}"
 
 class Newspaper(LibraryItem):
     """
@@ -163,7 +162,10 @@ class Newspaper(LibraryItem):
     """
 
     # TODO Инициализируйте переменные от LibraryItem и добавьте новый приватный атрибут publication_date. Не забудьте, что нужна валидация перед записью
-
+    def __init__(self, title, publication_year, publication_date):
+        super().__init__(title=title, publication_year=publication_year)
+        self.__validate_publication_date(publication_date)
+        self.__publication_date = publication_date
     @staticmethod
     def __validate_publication_date(publication_date: str):
         """
@@ -172,12 +174,17 @@ class Newspaper(LibraryItem):
         Проверка, что вообще дата существует в календаре (можно использовать datetime.date(day=1, month=1, year=2020),
             если не будет ошибок значит дата корректная)
         """
-        ...  # TODO написать метод валидации
-
+        # TODO написать метод валидации
+        if not isinstance(publication_date, str):
+            raise TypeError("день, месяц, и год должны быт разделены точкой '.', как пример: 01.01.2020")
     # TODO добавьте свойство publication_date (на чтение)
+    @property
+    def publication_date(self):
+        return self.__publication_date
 
     # TODO  переопределите метод get_info, чтобы он отображал информацию специфичную для газеты (Газета: 'Название газеты',  Дата выпуска: 'Дата', Год издания: 'Год')
-
+    def get_info(self):
+        return f"Газета: '{self.title}', Дата выпуска: {self.publication_date}, Год издания: {self.publication_year}"
 
 class LibraryManager:
     """
