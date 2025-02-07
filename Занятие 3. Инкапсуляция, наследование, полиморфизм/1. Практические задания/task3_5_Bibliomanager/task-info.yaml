@@ -149,7 +149,7 @@ files:
         selected: false
         status: Failed
       - offset: 4283
-        length: 148
+        length: 145
         placeholder_text: "... # TODO Инициализируйте переменные от LibraryItem и доба\
       вьте новый приватный атрибут issue_number. Не забудьте, что нужна валидация\
       \ перед записью"
@@ -161,9 +161,9 @@ files:
           super().__init__(title=title, publication_year=publication_year)
                   self.__validate_issue_number(issue_number)
                   self.__issue_number = issue_number
-        selected: false
+        selected: true
         status: Failed
-      - offset: 4601
+      - offset: 4769
         length: 36
         placeholder_text: "...  # TODO написать метод валидации"
         initial_state:
@@ -175,7 +175,7 @@ files:
                       raise TypeError()
         selected: false
         status: Failed
-      - offset: 4643
+      - offset: 4811
         length: 49
         placeholder_text: "# TODO добавьте свойство issue_number (на чтение)"
         initial_state:
@@ -188,7 +188,7 @@ files:
                   return self.__issue_number
         selected: false
         status: Failed
-      - offset: 4698
+      - offset: 4866
         length: 166
         placeholder_text: "# TODO  переопределите метод get_info, чтобы он отображал и\
       нформацию специфичную для журнала (Журнал: 'Название журнала',  Номер выпуск\
@@ -202,7 +202,7 @@ files:
                   return f"Журнал: '{self.title}', Номер выпуска: {self.issue_number}, Год издания: {self.publication_year}"
         selected: false
         status: Failed
-      - offset: 4938
+      - offset: 5106
         length: 152
         placeholder_text: "... # TODO Инициализируйте переменные от LibraryItem и доба\
       вьте новый приватный атрибут publication_date. Не забудьте, что нужна валида\
@@ -218,7 +218,7 @@ files:
                   self.__publication_date = publication_date
         selected: false
         status: Failed
-      - offset: 5560
+      - offset: 5728
         length: 36
         placeholder_text: "...  # TODO написать метод валидации"
         initial_state:
@@ -233,7 +233,7 @@ files:
                   datetime.date(day=int(date[0]), month=int(date[1]), year=int(date[2]))
         selected: false
         status: Failed
-      - offset: 5602
+      - offset: 5770
         length: 53
         placeholder_text: "# TODO добавьте свойство publication_date (на чтение)"
         initial_state:
@@ -246,7 +246,7 @@ files:
                   return self.__publication_date
         selected: false
         status: Failed
-      - offset: 5661
+      - offset: 5829
         length: 162
         placeholder_text: "# TODO  переопределите метод get_info, чтобы он отображал и\
       нформацию специфичную для газеты (Газета: 'Название газеты',  Дата выпуска:\

@@ -136,7 +136,10 @@ class Magazine(LibraryItem):
         """
         issue_number - Номер выпуска
         """
-        ... # TODO Инициализируйте переменные от LibraryItem и добавьте новый приватный атрибут issue_number. Не забудьте, что нужна валидация перед записью
+         # TODO Инициализируйте переменные от LibraryItem и добавьте новый приватный атрибут issue_number. Не забудьте, что нужна валидация перед записью
+        super().__init__(title = title, publication_year = publication_year)
+        self.__validate_issue_number(issue_number)
+        self.__issue_number = issue_number
 
     @staticmethod
     def __validate_issue_number(issue_number: int):
