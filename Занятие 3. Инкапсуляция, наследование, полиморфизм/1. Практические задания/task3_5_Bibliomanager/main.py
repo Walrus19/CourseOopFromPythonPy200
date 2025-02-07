@@ -29,14 +29,17 @@ class LibraryItem:
         """
         Проверка на соответствие типу str, иначе ошибка TypeError
         """
-        ...  # TODO реализуйте проверку
-
+        # TODO реализуйте проверку
+        if not isinstance(title, str):
+            raise TypeError("Должен быть тип str")
     @staticmethod
     def __validate_author(author: str):
         """
         Проверка на соответствие типу str или None, иначе ошибка TypeError
         """
-        ...  # TODO реализуйте проверку
+        # TODO реализуйте проверку
+        if not isinstance(author, str|None):
+            raise TypeError("Должен быть тип str")
 
     @staticmethod
     def __validate_publication_year(year: int):
@@ -44,8 +47,9 @@ class LibraryItem:
         Проверка на соответствие типу int или None, иначе ошибка TypeError
         Если значение отрицательное или 0, то ошибка ValueError
         """
-        ...  # TODO реализуйте проверку
-
+        # TODO реализуйте проверку
+        if not isinstance(year, int|None):
+            raise TypeError("Должен быть тип int")
     def check_out(self):
         if not self.__is_checked_out:
             self.__is_checked_out = True
@@ -61,12 +65,28 @@ class LibraryItem:
             raise ValueError(f"{self.__title} не было выдано.")
 
     # TODO добавьте свойство is_checked_out (на чтение). Возвращает "Выдано" если is_checked_out=True, иначе "Доступно"
+    @property
+    def is_checked_out(self):
+        if self.__is_checked_out == True:
+            return "Выдано"
+        else:
+            return "Доступно"
+
 
     # TODO добавьте свойство title (на чтение)
+    @property
+    def title(self):
+        return self.__title
 
     # TODO добавьте свойство author (на чтение)
+    @property
+    def author(self):
+        return self.__author
 
     # TODO добавьте свойство publication_year (на чтение)
+    @property
+    def publication_year(self):
+        return self.__publication_year
 
     def __str__(self):
         return f"'{self.__title}' от {self.__author} ({self.__publication_year}) — {self.is_checked_out}"
@@ -85,19 +105,28 @@ class Book(LibraryItem):
         genre - Жанр
         """
         # TODO Инициализируйте переменные от LibraryItem и добавьте новый приватный атрибут genre. Не забудьте, что нужна валидация перед записью
+        def __init__(self, genre):
+            super().__init__(title, author, publication_year)
+            self.__validate_genre(genre)
+            self.__genre = genre
+
 
     @staticmethod
     def __validate_genre(genre: str):
         """
         Проверка на соответствие типу str, иначе ошибка TypeError
         """
-        ...  # TODO написать метод валидации
-
+        # TODO написать метод валидации
+        if not isinstance(genre, str):
+            raise TypeError("Должен быть тип str")
     # TODO добавьте свойство genre (на чтение)
+    @property
+    def genre(self):
+        return self.__genre
 
     # TODO  переопределите метод get_info, чтобы он отображал информацию специфичную для книги (Книга: 'Название книги',  Автор: 'Кто написал', Жанр: 'Жанр книги', Год издания: 'Год')
-
-
+    def get_info(self):
+        return f"Книга: '{self.title}', Автор: {self.author}, Жанр: {self.genre}, Год издания: {self.publication_year}"
 class Magazine(LibraryItem):
     """
     Класс для журналов

@@ -12,8 +12,5 @@ files:
   - name: tests/input.txt
     visible: false
     learner_created: false
-status: Solved
-feedback:
-  message: Congratulations!
-  time: "Wed, 05 Feb 2025 07:51:57 UTC"
+status: Unchecked
 record: -1

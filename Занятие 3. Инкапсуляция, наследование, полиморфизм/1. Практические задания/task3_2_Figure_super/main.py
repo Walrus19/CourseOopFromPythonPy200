@@ -1,14 +1,15 @@
 class Figure:
-    def __init__(self, name=None):
-        self.name = name
+    def __init__(self, ser=None):
+        self.ser = ser
 
     def print_name(self):
-        print(self.name)
+        print(self.ser)
 
 
 class Rectangle(Figure):
     def __init__(self, a, b, name=None):
         # TODO вызвать конструктор базового класса с помощью super()
+        super().__init__(name)
         self.a = a
         self.b = b
 
