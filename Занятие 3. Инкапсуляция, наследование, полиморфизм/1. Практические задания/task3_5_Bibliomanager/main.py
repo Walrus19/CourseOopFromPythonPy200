@@ -146,19 +146,23 @@ class Magazine(LibraryItem):
         """
         Проверка на соответствие типу int, иначе ошибка TypeError
         """
-        ...  # TODO написать метод валидации
-
+        # TODO написать метод валидации
+        if not isinstance(issue_number, int):
+            raise TypeError('Должен быть типа int')
     # TODO добавьте свойство issue_number (на чтение)
-
+    @property
+    def issue_number(self):
+        return self.__issue_number
     # TODO  переопределите метод get_info, чтобы он отображал информацию специфичную для журнала (Журнал: 'Название журнала',  Номер выпуска: 'Номер', Год издания: 'Год')
-
+    def get_info(self):
+        return f"Книга: '{self.title}', Номер выпуска: {self.issue_number},  Год издания: {self.publication_year}"
 
 class Newspaper(LibraryItem):
     """
     Класс для газет
     """
 
-    ... # TODO Инициализируйте переменные от LibraryItem и добавьте новый приватный атрибут publication_date. Не забудьте, что нужна валидация перед записью
+    # TODO Инициализируйте переменные от LibraryItem и добавьте новый приватный атрибут publication_date. Не забудьте, что нужна валидация перед записью
 
     @staticmethod
     def __validate_publication_date(publication_date: str):
