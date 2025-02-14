@@ -1,14 +1,14 @@
 class Book:
     """ Базовый класс книги. """
     def __init__(self, name: str, author: str):
-        self.name = name
-        self.author = author
+        self._name = name
+        self._author = author
 
     def __str__(self):
-        return f"Книга {self.name}. Автор {self.author}"
+        return f"Книга {self._name}. Автор {self._author}"
 
     def __repr__(self):
-        return f"{self.__class__.__name__}(name={self.name!r}, author={self.author!r})"
+        return f"{self.__class__.__name__}(name={self._name!r}, author={self._author!r})"
 
 
 class PaperBook(Book):
@@ -16,8 +16,9 @@ class PaperBook(Book):
         super().__init__(name, author)
         self.pages = pages
 
-    def __str__(self):
-        return f"Книга {self.name}. Автор {self.author}"
+
+    # def __str__(self):
+    #     return f"Книга {self.name}. Автор {self.author}"
 
 
 class AudioBook(Book):
@@ -25,7 +26,7 @@ class AudioBook(Book):
         super().__init__(name, author)
         self.duration = duration
 
-    def __str__(self):
-        return f"Книга {self.name}. Автор {self.author}"
+    # def __str__(self):
+    #     return f"Книга {self.name}. Автор {self.author}"
 
-a = PaperBook.__init__(1,"sdhjhsd","SPb","author")
+a = PaperBook(1,800,"SPb")
